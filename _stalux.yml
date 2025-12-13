@@ -4,7 +4,7 @@
 
 # 核心站点信息
 title: "CBlog"
-titleDefault: "CBlog"
+titleDefault: "CBlog" 
 siteName: "CBlog"
 author: "Chara_a"
 enableViewTransitions: false  ## 是否启用视图转换效果，默认为 false
