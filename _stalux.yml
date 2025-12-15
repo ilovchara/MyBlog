@@ -12,7 +12,7 @@ enableViewTransitions: false  ## 是否启用视图转换效果，默认为 fals
 
 # SEO 核心配置 - 搜索引擎查询
 description: "采用博客主题Stalux，实现的个人博客，内容涵盖了算法，c#的内容。希望能慢慢积累，慢慢努力。"
-short_description: "博客主题Stalux"
+short_description: "普通人"
 url: "https://stalux.needhelp.icu"
 keywords: "Stalux, 算法,个人博客,C#,.NETCore,前端开发, Astro"
 lang: "zh-CN"
@@ -20,8 +20,9 @@ locale: "zh_CN"
 canonical: "https://stalux.needhelp.icu"
 
 # 站点资源配置
-favicon: ""
-avatarPath: ""
+# 使用绝对路径引用
+favicon: "/images/icons8-桃心-16.ico"
+avatarPath: "/images/icons8-桃心-96.png"
 
 # <head>元素硬嵌入
 head: |
