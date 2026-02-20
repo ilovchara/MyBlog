@@ -1,36 +1,11 @@
 ---
 // 移除 Posts prop，改为客户端获取
 ---
-
 <div class="postlist-wrapper">
-  <div id="posts-container" class="posts-container" style="display: none;">
+  <div id="posts-container" class="posts-container">
     <div class="posts-grid" id="posts-grid">
-      <!-- 文章将通过 JavaScript 动态加载 -->
+      <div class="no-posts">正在努力加载文章...</div>
     </div>
-  </div>
-
-  <div id="load-posts-trigger" class="load-posts-trigger">
-    <button id="load-posts-btn" class="load-posts-btn">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-        ></path>
-        <polyline points="14,2 14,8 20,8"></polyline>
-        <line x1="16" y1="13" x2="8" y2="13"></line>
-        <line x1="16" y1="17" x2="8" y2="17"></line>
-        <polyline points="10,9 9,9 8,9"></polyline>
-      </svg>
-      <span>点击加载文章列表</span>
-    </button>
   </div>
 </div>
 
@@ -171,71 +146,35 @@
   }
 
   // 加载文章函数
+// 1. 定义加载文章的核心函数
   async function loadPosts() {
-    if (isLoading || postsLoaded || !postsContainer) return;
-
-    isLoading = true;
-
-    // 显示加载状态
-    if (loadBtn) {
-      loadBtn.disabled = true;
-      loadBtn.innerHTML = `
-                <div class="spinner"></div>
-                <span>正在加载文章...</span>
-            `;
-    }
+    const postsContainer = document.getElementById("posts-container");
+    const postsGrid = document.getElementById("posts-grid");
+    
+    if (!postsContainer || !postsGrid) return;
 
     try {
-      // 从 API 获取文章数据
+      // 获取数据
       const posts = await fetchAllPosts();
-
-      // 渲染文章
+      // 渲染数据
       renderPosts(posts);
-      console.log("Posts rendered:", posts.length, "articles");
-
-      // 显示文章容器
+      
+      // 显示容器并触发动画
       postsContainer.style.display = "block";
       postsContainer.classList.add("show");
-      postsContainer.style.animation = "fadeInUp 0.8s ease-in-out forwards";
-      console.log("Posts container displayed");
-
-      postsLoaded = true;
-
-      // 隐藏加载按钮
-      if (loadTrigger) {
-        loadTrigger.style.display = "none";
-      }
-
+      
       // 预加载图片
       preloadImages();
     } catch (error) {
       console.error("Error loading posts:", error);
-      const postsGrid = document.getElementById("posts-grid");
-      if (postsGrid) {
-        postsGrid.innerHTML =
-          '<div class="error">加载文章失败，请刷新页面重试</div>';
-        postsContainer.style.display = "block";
-        postsContainer.classList.add("show");
-      }
-
-      // 恢复按钮状态
-      if (loadBtn) {
-        loadBtn.disabled = false;
-        loadBtn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14,2 14,8 20,8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10,9 9,9 8,9"></polyline>
-                    </svg>
-                    <span>重新加载</span>
-                `;
-      }
-    } finally {
-      isLoading = false;
+      postsGrid.innerHTML = '<div class="error">加载文章失败，请刷新页面重试</div>';
     }
   }
+
+  // 2. 核心改动：页面加载后自动执行
+  document.addEventListener("DOMContentLoaded", () => {
+    loadPosts();
+  });
 
   // 预加载图片
   function preloadImages() {
