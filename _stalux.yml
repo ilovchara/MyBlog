@@ -46,9 +46,9 @@ nav:
   # - title: "友链"
   #   path: "/links"
   #   icon: "link"
-  - title: "关于"
-    path: "/about"
-    icon: "user"
+  # - title: "关于"
+  #   path: "/about"
+  #   icon: "user"
 
 # 站点特效配置
 textyping:
