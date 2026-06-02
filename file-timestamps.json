@@ -9,35 +9,10 @@
     "modified": "2025-12-14T00:24:29.812+08:00",
     "abbrlink": "856a04d5"
   },
-  "src/content/posts/2024/12-16-部署blog.md": {
-    "created": "2025-12-14T00:25:03.477+08:00",
-    "modified": "2025-08-06T17:00:41.072+08:00",
-    "abbrlink": "ca5e4849"
-  },
-  "src/content/posts/2025/08-16-NET知识汇总.md": {
-    "created": "2025-12-14T00:28:56.136+08:00",
-    "modified": "2025-12-18T03:40:50.744+08:00",
-    "abbrlink": "ad43d1f2"
-  },
-  "src/content/posts/2025/01-03-配置新电脑链接github.md": {
-    "created": "2025-12-14T00:36:50.329+08:00",
-    "modified": "2025-12-14T00:38:38.229+08:00",
-    "abbrlink": "4e15e3a6"
-  },
-  "src/content/posts/2025/09-09-C-基础语法.md": {
-    "created": "2025-12-14T00:31:44.140+08:00",
-    "modified": "2025-12-14T00:31:59.210+08:00",
-    "abbrlink": "a55f4fc6"
-  },
   "src/content/posts/2025/12-12-Sql.md": {
     "created": "2025-12-14T00:32:45.151+08:00",
     "modified": "2025-12-14T00:36:30.711+08:00",
     "abbrlink": "5dc9c8d1"
-  },
-  "src/content/posts/2025/12-04-Docker.md": {
-    "created": "2025-12-14T00:32:25.048+08:00",
-    "modified": "2025-12-15T13:08:33.273+08:00",
-    "abbrlink": "8955a986"
   },
   "src/content/posts/2023/2.图论.md": {
     "created": "2025-12-14T01:29:07.840+08:00",
@@ -76,12 +51,32 @@
   },
   "src/content/posts/2025/12-19-Web.md": {
     "created": "2025-12-19T13:00:23.756+08:00",
-    "modified": "2026-01-07T20:00:49.007+08:00",
+    "modified": "2026-05-26T08:16:08.434+08:00",
     "abbrlink": "478d6d30"
   },
-  "src/content/posts/2026/1-17-设计模式.md": {
-    "created": "2026-01-17T15:29:05.185+08:00",
-    "modified": "2026-01-17T15:30:33.309+08:00",
-    "abbrlink": "d63524d0"
+  "src/content/posts/Base/01-03-配置新电脑链接github.md": {
+    "created": "2026-05-26T08:16:08.410+08:00",
+    "modified": "2026-05-26T08:16:08.410+08:00",
+    "abbrlink": "d9b07a9b"
+  },
+  "src/content/posts/Base/12-16-部署blog.md": {
+    "created": "2026-05-26T08:16:08.393+08:00",
+    "modified": "2026-05-26T08:16:08.393+08:00",
+    "abbrlink": "1a4df1ff"
+  },
+  "src/content/posts/Base/26-5-26-默认新文章配置.md": {
+    "created": "2026-05-26T08:40:57.469+08:00",
+    "modified": "2026-05-26T08:48:19.254+08:00",
+    "abbrlink": "72f17bbb"
+  },
+  "src/content/posts/2026/5-26-.NET基础.md": {
+    "created": "2026-05-26T08:54:52.808+08:00",
+    "modified": "2026-05-28T11:15:12.135+08:00",
+    "abbrlink": "619fc286"
+  },
+  "src/content/posts/2026/5-27-.NET进阶.md": {
+    "created": "2026-05-27T14:21:48.763+08:00",
+    "modified": "2026-05-27T17:19:08.915+08:00",
+    "abbrlink": "5397c150"
   }
 }
